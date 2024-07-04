@@ -23,7 +23,7 @@ How to use:
   2. Install the requirements: pip install -q -r requirements.txt
   3. Traning the VQGAN: edit config file (configs/vqgan.yaml), then run the command
      
-     python train.py [\]\
+     python train.py \\\
        --phase "vqgan" [\]\
        --config_file "./configs/vqgan.yaml" [\]\
        --max_epochs 10 [\]\
