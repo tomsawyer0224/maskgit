@@ -19,9 +19,17 @@ About this project:
   3. Second stage (Transformer) has not been trained yet because I don't have enough computational resources (Google Colab free tier).
 
 How to use:
-  1. Traning the VQGAN: edit configs/vqgan.yaml file
-     > image_size: the size of image
-     > down_block_types/up_block_types: block type in the Encoder/Decoder, can be: DownBlock/UpBlock, AttnDownBlock/AttnUpBlock
-     > block_out_channels: output channel of down_block/up_block
-     > train_data/val_data/test_data: path/to/train_dataset (val/test)
-  3. Training the Transformer:
+  1. Clone this repo, cd to maskgit
+  2. Install the requirements: pip install -q -r requirements.txt
+  3. Traning the VQGAN: edit config file (configs/vqgan.yaml), then run the command
+     python train.py \
+       --phase "vqgan" \ 
+       --config_file "./configs/vqgan.yaml" \
+       --max_epochs 10 \
+       --ckpt_path "path/to/last_checkpoint" \ # when you want to resume training
+  5. Training the Transformer: edit config file (configs/transformer.yaml), then run the command
+     python train.py \
+       --phase "transformer" \
+       --config_file "./configs/transformer.yaml" \
+       --max_epochs 10 \
+       --ckpt_path "path/to/last_checkpoint" # when you want to resume training
