@@ -1,14 +1,14 @@
 This is a personal project, for educational purpose only!
 
 Based on:
-  https://arxiv.org/abs/2202.04200,
-  https://arxiv.org/abs/2012.09841,
-  https://github.com/dome272/MaskGIT-pytorch,
-  https://github.com/CompVis/taming-transformers,
-  https://github.com/google-research/maskgit,
-  https://github.com/hmorimitsu/maskgit-torch,
-  https://github.com/richzhang/PerceptualSimilarity,
-  https://github.com/lucidrains/vector-quantize-pytorch,
+  https://arxiv.org/abs/2202.04200\
+  https://arxiv.org/abs/2012.09841\
+  https://github.com/dome272/MaskGIT-pytorch\
+  https://github.com/CompVis/taming-transformers\
+  https://github.com/google-research/maskgit\
+  https://github.com/hmorimitsu/maskgit-torch\
+  https://github.com/richzhang/PerceptualSimilarity\
+  https://github.com/lucidrains/vector-quantize-pytorch\
   https://huggingface.co/docs/diffusers/api/models/unet2d
   
 About this project:
@@ -21,14 +21,14 @@ About this project:
 How to use:
   1. Clone this repo, cd to maskgit
   2. Install the requirements: pip install -q -r requirements.txt
-  3. Traning the VQGAN: edit config file (configs/vqgan.yaml), then run the command
+  3. Traning the VQGAN: edit the config file (configs/vqgan.yaml), then run the command
      
      python train.py \\\
        --phase "vqgan" \\\
        --config_file "./configs/vqgan.yaml" \\\
        --max_epochs 10 \\\
        --ckpt_path "path/to/last_checkpoint" # when you want to resume training
-  5. Training the Transformer: edit config file (configs/transformer.yaml, in this phase you must provide vqgan checkpoint path), then run the command
+  5. Training the Transformer: edit the config file (configs/transformer.yaml, in this phase you must provide vqgan checkpoint path), then run the command
      
      python train.py \\\
        --phase "transformer" \\\
