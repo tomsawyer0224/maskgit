@@ -1,0 +1,58 @@
+VQGAN_config:
+    name: 'VQGAN'
+    encoder_config:
+        name: 'Encoder'
+        image_channel: &ic 3
+        image_size: &is 32 #64
+        down_block_types: ['DownBlock','DownBlock','DownBlock'] #['DownBlock','DownBlock','DownBlock','AttnDownBlock','DownBlock']
+        block_out_channels: [32,64,64]#[128,128,256,256,512]
+        num_resblocks: &nrb 1 #2
+        num_groups: &ng 32
+        use_conv: &uc True
+    decoder_config:
+        name: 'Decoder'
+        image_channel: *ic
+        image_size: *is
+        up_block_types: ['UpBlock','UpBlock','UpBlock'] #['UpBlock','AttnUpBlock','UpBlock','UpBlock','UpBlock']
+        block_out_channels: [64,64,32]#[512,256,256,128,128]
+        num_resblocks: *nrb
+        num_groups: *ng
+        use_conv: *uc
+    vq_config:
+        name: 'VectorQuantizer'
+        codebook_size: 512
+        latent_dim: 64
+        commitment_weight: 0.25
+    discriminator_config:
+        name: 'NLayerDiscriminator'
+        image_channel: *ic
+        ndf: 64
+        n_layers: 3
+    loss_config:
+        discriminator_weight: 0.8
+        discriminator_start: 3000
+        discriminator_factor: 0.2
+        codebook_weight: 1.0
+        reconstruction_weight: 1.0
+        perceptual_weight: 1.0
+dataset_config:
+    train_data: '../datasets/CelebrityFacesDataset'
+    val_data:
+    test_data:
+    image_size: *is
+    image_channel: *ic
+    batch_size: 64
+training_config:
+    trainer_config:
+        default_root_dir: './results/vqgan'
+        logger: CSVLogger # [False, CSVLogger]
+        log_every_n_steps: 1
+        max_epochs: 2
+        #accelerator: 'gpu'
+        #devices: 2
+    fit_config:
+        ckpt_path:
+    optimizer_config:
+        lr: 6.0e-4 #4.5e-6
+        weight_decay: 0.0
+        gamma: 0.99

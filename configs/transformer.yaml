@@ -1,0 +1,33 @@
+vqgan_checkpoint: './results/vqgan/checkpoints/epoch=99-step=200.ckpt'
+Transformer_config:
+    name: Transformer
+    d_model: 768
+    nhead: 8
+    dim_feedforward: 2048
+    dropout: 0.1
+    activation: 'gelu'
+    num_layers: 6
+    codebook_size: 512
+    n_classes: 100
+    latent_image_size: 8
+dataset_config:
+    train_data: '../datasets/CelebrityFacesDataset'
+    val_data:
+    test_data:
+    image_size: 32
+    image_channel: 3
+    batch_size: 64
+training_config:
+    trainer_config:
+        default_root_dir: './results/transformer'
+        logger: CSVLogger # [False, CSVLogger]
+        log_every_n_steps: 1
+        max_epochs: 2
+        #accelerator: 'gpu'
+        #devices: 2
+    fit_config:
+        ckpt_path:
+    optimizer_config:
+        lr: 4.5e-4
+        weight_decay: 0.0
+        gamma: 0.999
