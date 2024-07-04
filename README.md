@@ -34,6 +34,6 @@ How to use:
        --phase "transformer" \\\
        --config_file "./configs/transformer.yaml" \\\
        --max_epochs 10 \\\
-       --ckpt_path "path/to/checkpoint" # when you want to resume training
-  6. After training, logs and checkpoints will be saved to "results" folder
+       --ckpt_path "path/to/checkpoint" # when you want to resume training \
+  6. After training, logs and checkpoints will be saved to "results" folder \
 Note: this project was built on Google Colab, it may not work on the other platforms.
