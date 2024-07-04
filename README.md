@@ -36,4 +36,4 @@ How to use:
        --max_epochs 10 \\\
        --ckpt_path "path/to/last_checkpoint" # when you want to resume training
 
-Note: this project was built on Google Colab, it may not work on other platforms.
+Note: this project was built on Google Colab, it may not work on the other platforms.
