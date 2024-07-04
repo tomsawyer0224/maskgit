@@ -27,7 +27,7 @@ How to use:
        --config_file "./configs/vqgan.yaml" \
        --max_epochs 10 \
        --ckpt_path "path/to/last_checkpoint" \ # when you want to resume training
-  5. Training the Transformer: edit config file (configs/transformer.yaml), then run the command
+  5. Training the Transformer: edit config file (configs/transformer.yaml, in this phase you must provide vqgan checkpoint path), then run the command
      python train.py \
        --phase "transformer" \
        --config_file "./configs/transformer.yaml" \
