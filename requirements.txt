@@ -1,0 +1,4 @@
+lightning==2.2.0
+#vector-quantize-pytorch==1.14.1
+einops==0.7.0
+#lpips==0.1.4
