@@ -17,3 +17,11 @@ About this project:
      ![image](https://github.com/tomsawyer0224/maskgit/assets/130035084/3b00811f-1fb4-471b-a998-18b3d6ed9e25)
      ![image](https://github.com/tomsawyer0224/maskgit/assets/130035084/619dcad6-67fe-4ba3-b474-b5b32334b113)
   3. Second stage (Transformer) has not been trained yet because I don't have enough computational resources (Google Colab free tier).
+
+How to use:
+  1. Traning the VQGAN: edit configs/vqgan.yaml file
+     > image_size: the size of image
+     > down_block_types/up_block_types: block type in the Encoder/Decoder, can be: DownBlock/UpBlock, AttnDownBlock/AttnUpBlock
+     > block_out_channels: output channel of down_block/up_block
+     > train_data/val_data/test_data: path/to/train_dataset (val/test)
+  3. Training the Transformer:
