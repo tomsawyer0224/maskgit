@@ -1,14 +1,14 @@
 This is a personal project, for educational purpose only!
 
 Based on:
-  https://arxiv.org/abs/2202.04200\
-  https://arxiv.org/abs/2012.09841\
-  https://github.com/dome272/MaskGIT-pytorch\
-  https://github.com/CompVis/taming-transformers\
-  https://github.com/google-research/maskgit\
-  https://github.com/hmorimitsu/maskgit-torch\
-  https://github.com/richzhang/PerceptualSimilarity\
-  https://github.com/lucidrains/vector-quantize-pytorch\
+  https://arxiv.org/abs/2202.04200 \
+  https://arxiv.org/abs/2012.09841 \
+  https://github.com/dome272/MaskGIT-pytorch \
+  https://github.com/CompVis/taming-transformers \
+  https://github.com/google-research/maskgit \
+  https://github.com/hmorimitsu/maskgit-torch \
+  https://github.com/richzhang/PerceptualSimilarity \
+  https://github.com/lucidrains/vector-quantize-pytorch \
   https://huggingface.co/docs/diffusers/api/models/unet2d
   
 About this project:
