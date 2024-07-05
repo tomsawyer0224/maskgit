@@ -16,7 +16,7 @@ About this project:
   2. First stage (VQGAN) was trained on Celebrity Face Image Dataset (https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset) with minimal settings (image size: 32, depth: 3, latent dim: 64,...). Please see the "results" folder.
      ![image](https://github.com/tomsawyer0224/maskgit/assets/130035084/3b00811f-1fb4-471b-a998-18b3d6ed9e25) \
      ![image](https://github.com/tomsawyer0224/maskgit/assets/130035084/619dcad6-67fe-4ba3-b474-b5b32334b113)
-  3. Second stage (Transformer) has not been trained yet because the quality of VQGAN checkpoint is very bad (Google Colab free can not get a good results).
+  3. Second stage (Transformer) has not been trained yet.
 
 How to use:
   1. Clone this repo, cd to maskgit
