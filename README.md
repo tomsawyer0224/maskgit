@@ -22,19 +22,20 @@ How to use:
   1. Clone this repo, cd to maskgit
   2. Install the requirements: pip install -q -r requirements.txt
   3. Traning the VQGAN: edit the config file (configs/vqgan.yaml), then run the command
-     
-     python train.py \\\
-       --phase "vqgan" \\\
-       --config_file "./configs/vqgan.yaml" \\\
-       --max_epochs 10 \\\
+```
+     python train.py \
+       --phase "vqgan" \
+       --config_file "./configs/vqgan.yaml" \
+       --max_epochs 10 \
        --ckpt_path "path/to/checkpoint" # when you want to resume training
-  4. Training the Transformer: edit the config file (configs/transformer.yaml, in this phase you must provide vqgan checkpoint path), then run the command
+```
+  5. Training the Transformer: edit the config file (configs/transformer.yaml, in this phase you must provide vqgan checkpoint path), then run the command
      
      python train.py \\\
        --phase "transformer" \\\
        --config_file "./configs/transformer.yaml" \\\
        --max_epochs 10 \\\
        --ckpt_path "path/to/checkpoint" # when you want to resume training \
-  5. After training, logs and checkpoints will be saved to "results" folder
+  6. After training, logs and checkpoints will be saved to "results" folder
 
 Note: this project was built on Google Colab, it may not work on the other platforms.
