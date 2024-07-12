@@ -1,6 +1,6 @@
-#This is a personal project, for educational purpose only!
+# This is a personal project, for educational purpose only!
 
-#Based on: \
+# Based on: \
   https://arxiv.org/abs/2202.04200 \
   https://arxiv.org/abs/2012.09841 \
   https://github.com/dome272/MaskGIT-pytorch \
