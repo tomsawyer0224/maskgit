@@ -37,4 +37,4 @@
 ```
   6. After training, logs and checkpoints will be saved to the "results" folder.
 
-Note: this project was built on Google Colab, it may not work on the other platforms.
+Note: This project was built on Google Colab, it may not work on other platforms.
