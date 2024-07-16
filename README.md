@@ -11,30 +11,29 @@
   https://huggingface.co/docs/diffusers/api/models/unet2d
 # About this project:
 1. Maskgit is a two-stage image generation model. The first stage is to quantize an image to a sequence of discrete tokens. In the second stage, an autoregressive model is learned to generate image tokens sequentially based on the previously generated result.
-2. The first stage (VQGAN) was trained on Celebrity Face Image Dataset (https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset) with minimal settings (image size: 32, depth: 3, latent dim: 64,...).S
-> See the "results" folder for more details.
+2. The first stage (VQGAN) was trained on Celebrity Face Image Dataset (https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset) with minimal settings (image size: 32, depth: 3, latent dim: 64,...).
+> See the "results" folder for more details. \
      ![image](https://github.com/tomsawyer0224/maskgit/assets/130035084/3b00811f-1fb4-471b-a998-18b3d6ed9e25) \
      ![image](https://github.com/tomsawyer0224/maskgit/assets/130035084/619dcad6-67fe-4ba3-b474-b5b32334b113)
 4. The second stage (Transformer) has not been trained yet.
-
 # How to use:
-  1. Clone this repo, cd to maskgit.
-  2. Install the requirements: pip install -q -r requirements.txt.
-  3. Traning the VQGAN: edit the config file (configs/vqgan.yaml), then run the command:
+1. Clone this repo, cd to maskgit.
+2. Install the requirements: pip install -q -r requirements.txt.
+3. Traning the VQGAN: modify the config file (configs/vqgan.yaml), then run the below command:
 ```
-     python train.py \
-       --phase "vqgan" \
-       --config_file "./configs/vqgan.yaml" \
-       --max_epochs 10 \
-       --ckpt_path "path/to/checkpoint" # when you want to resume training
+ python train.py \
+   --phase "vqgan" \
+   --config_file "./configs/vqgan.yaml" \
+   --max_epochs 10 \
+   --ckpt_path "path/to/checkpoint" # when you want to resume training
 ```
-  5. Training the Transformer: edit the config file (configs/transformer.yaml, in this phase you must provide vqgan checkpoint path), then run the command:
+5. Training the Transformer: modify the config file (configs/transformer.yaml, in this phase you must provide vqgan checkpoint path), then run the below command:
 ```
-     python train.py \
-       --phase "transformer" \
-       --config_file "./configs/transformer.yaml" \
-       --max_epochs 10 \
-       --ckpt_path "path/to/checkpoint" # when you want to resume training
+ python train.py \
+   --phase "transformer" \
+   --config_file "./configs/transformer.yaml" \
+   --max_epochs 10 \
+   --ckpt_path "path/to/checkpoint" # when you want to resume training
 ```
   6. After training, logs and checkpoints will be saved to the "results" folder.
 
