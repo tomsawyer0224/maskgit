@@ -1,14 +1,4 @@
 # This is a personal project, for educational purposes only!
-# Based on:
-  https://arxiv.org/abs/2202.04200 \
-  https://arxiv.org/abs/2012.09841 \
-  https://github.com/dome272/MaskGIT-pytorch \
-  https://github.com/CompVis/taming-transformers \
-  https://github.com/google-research/maskgit \
-  https://github.com/hmorimitsu/maskgit-torch \
-  https://github.com/richzhang/PerceptualSimilarity \
-  https://github.com/lucidrains/vector-quantize-pytorch \
-  https://huggingface.co/docs/diffusers/api/models/unet2d
 # About this project:
 1. Maskgit is a two-stage image generation model. The first stage is to quantize an image to a sequence of discrete tokens. In the second stage, an autoregressive model is learned to generate image tokens sequentially based on the previously generated result.
 2. The first stage (VQGAN) was trained on Celebrity Face Image Dataset (https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset) with minimal settings (image size: 32, depth: 3, latent dim: 64,...).
@@ -35,6 +25,15 @@
    --max_epochs 10 \
    --ckpt_path "path/to/checkpoint" # when you want to resume training
 ```
-  6. After training, logs and checkpoints will be saved to the "results" folder.
-
+> The logs and checkpoints will be saved to the "results" folder. \
 Note: This project was built on Google Colab, it may not work on other platforms.
+# Based on:
+  https://arxiv.org/abs/2202.04200 \
+  https://arxiv.org/abs/2012.09841 \
+  https://github.com/dome272/MaskGIT-pytorch \
+  https://github.com/CompVis/taming-transformers \
+  https://github.com/google-research/maskgit \
+  https://github.com/hmorimitsu/maskgit-torch \
+  https://github.com/richzhang/PerceptualSimilarity \
+  https://github.com/lucidrains/vector-quantize-pytorch \
+  https://huggingface.co/docs/diffusers/api/models/unet2d
