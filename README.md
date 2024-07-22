@@ -9,7 +9,15 @@ See the "results" folder for more details. \
 4. The second stage (Transformer) has not been trained yet.
 2. Experiment:
 2.1. The first stage (VQGAN):
-     - Model size: 
+     - Model size: ~17.9M params (image size: 32, depth: 3, latent dim: 64,...).
+     - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
+     - Number of epochs: 200.
+     - Platform: Google Colab free.
+2.2. The second stage (Transformer):
+     - Model size: 35.4M params.
+     - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
+     - Number of epochs:
+     - Platform: Google Colab free.
 # How to use:
 1. Clone this repo, cd to maskgit.
 2. Install the requirements: pip install -q -r requirements.txt.
