@@ -7,7 +7,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
      - Model size: ~17.9M params (image size: 32, depth: 3, latent dim: 64,...).
      - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
      - Number of epochs: 200.
-     - Platform: Google Colab free.
+     - Platform: Google Colab free. \
 2.2. The second stage (Transformer):
      - Model size: 35.4M params.
      - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
@@ -16,7 +16,8 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
 3. Result:
    - The reconstructed images are acceptable. \
      ![image](results/recontruction_images/test_on_epoch_199.png) \
-     ![image](results/recontruction_images/validate_on_epoch_199.png)
+     ![image](results/recontruction_images/validate_on_epoch_199.png) \
+   - The generated images are poor. (epoch 320, 340)
      
 # How to use:
 1. Clone this repo, cd to maskgit.
