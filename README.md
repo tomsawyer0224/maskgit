@@ -4,7 +4,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
 - This is a personal project, for educational purposes only!
 - This project was built to help understand the 'Vector Quantization' concept and the 'Transformer' architecture.
 # Experiment
-1. Training
+   ## Training
 - The first stage (VQGAN):
    - Model size: ~17.9M params (image size: 32, depth: 3, latent dim: 64,...).
    - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
