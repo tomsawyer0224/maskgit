@@ -18,8 +18,8 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
    - The reconstructed images are acceptable.
    - The generated images are poor. \
    - Quality of the model is not good, some probably reasons:
-     * The dataset is too small.
-     * The model is not complex enough.
+     * The dataset is too small. \
+     * The model is not complex enough. \
      ![image](results/recontruction_images/test_on_epoch_199.png) \
      ![image](results/recontruction_images/validate_on_epoch_199.png) \
      ![image](results/generated_images/validate_on_epoch_320.png) \
