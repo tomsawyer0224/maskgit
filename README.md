@@ -36,7 +36,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
          --phase "vqgan" \
          --config_file "./configs/vqgan.yaml" \
          --max_epochs 10 \
-         --ckpt_path "path/to/checkpoint" # when you want to resume training
+         --ckpt_path "path/to/checkpoint" # add this line to resume training
       ```
 4. Train the Transformer model: modify the config file (configs/transformer.yaml, in this phase you must provide the vqgan checkpoint), then run the below command:
       ```
