@@ -1,4 +1,4 @@
-# MaskGIT - Masked Generative Image Transformer
+# MaskGIT: Masked Generative Image Transformer
 MaskGIT is a two-stage image generation model. The first stage is to quantize an image to a sequence of discrete tokens. In the second stage, an autoregressive model is learned to generate image tokens sequentially based on the previously generated result.
 # About this project
 - This is a personal project, for educational purposes only!
@@ -9,12 +9,12 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
       - Model size: ~17.9M params (image size: 32, depth: 3, latent dim: 64,...).
       - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
       - Number of epochs: 200.
-      - Platform: Google Colab free.
+      - Platform: Google Colab Free (with a T4 GPU).
    - The second stage (Transformer):
       - Model size: ~35.4M params.
       - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
       - Number of epochs: 400.
-      - Platform: Google Colab free.
+      - Platform: Google Colab Free (with a T4 GPU).
 2. **Results**
    - The reconstructed images are acceptable.
    - The generated images are poor. \
