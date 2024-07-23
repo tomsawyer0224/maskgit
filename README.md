@@ -21,7 +21,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
      ![image](results/recontruction_images/test_on_epoch_199.png) \
      ![image](results/recontruction_images/validate_on_epoch_199.png) \
      ![image](results/generated_images/validate_on_epoch_320.png) \
-     ![image](results/generated_images/validate_on_epoch_340.png) \
+     ![image](results/generated_images/validate_on_epoch_340.png)
 3. **Conclusion**
 The performace of the model is not good, for some probably reasons:
 - The dataset is too small (1799 images) ⟶ Try to use a bigger dataset.
