@@ -1,5 +1,5 @@
 # MaskGIT - Masked Generative Image Transformer
-MaskGIT is a two-stage image generation model. The first stage is to quantize an image to a sequence of discrete tokens. In the second stage, an autoregressive model is learned to generate image tokens sequentially based on the previously generated result.
+   MaskGIT is a two-stage image generation model. The first stage is to quantize an image to a sequence of discrete tokens. In the second stage, an autoregressive model is learned to generate image tokens sequentially based on the previously generated result.
 # About this project:
 1. This is a personal project, for educational purposes only!
 2. This project was built to help understand the 'Vector Quantization' concept and the 'Transformer' architecture.
