@@ -44,7 +44,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
          --phase "transformer" \
          --config_file "./configs/transformer.yaml" \
          --max_epochs 10 \
-         --ckpt_path "path/to/checkpoint" # when you want to resume training
+         --ckpt_path "path/to/checkpoint" # add this line to resume training
       ```
 # Based on
   https://arxiv.org/abs/2202.04200 \
