@@ -30,7 +30,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
 # How to use
 1. Clone this repo, cd into maskgit.
 2. Install the requirements: pip install -q -r requirements.txt.
-3. Train the VQGAN: modify the config file (configs/vqgan.yaml), then run the below command:
+3. Train the VQGAN model: modify the config file (configs/vqgan.yaml), then run the below command:
       ```
        python train.py \
          --phase "vqgan" \
@@ -38,7 +38,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
          --max_epochs 10 \
          --ckpt_path "path/to/checkpoint" # when you want to resume training
       ```
-4. Train the Transformer: modify the config file (configs/transformer.yaml, in this phase you must provide the vqgan checkpoint), then run the below command:
+4. Train the Transformer model: modify the config file (configs/transformer.yaml, in this phase you must provide the vqgan checkpoint), then run the below command:
       ```
        python train.py \
          --phase "transformer" \
