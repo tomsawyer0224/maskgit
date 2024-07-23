@@ -4,16 +4,16 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
 1. This is a personal project, for educational purposes only!
 2. This project was built to help understand the 'Vector Quantization' concept and the 'Transformer' architecture.
 3. Experiment:
-+ The first stage (VQGAN):
-     - Model size: ~17.9M params (image size: 32, depth: 3, latent dim: 64,...).
-     - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
-     - Number of epochs: 200.
-     - Platform: Google Colab free. \
-+ The second stage (Transformer):
-     - Model size: 35.4M params.
-     - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
-     - Number of epochs:
-     - Platform: Google Colab free.
+     + The first stage (VQGAN):
+          - Model size: ~17.9M params (image size: 32, depth: 3, latent dim: 64,...).
+          - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
+          - Number of epochs: 200.
+          - Platform: Google Colab free. \
+     + The second stage (Transformer):
+          - Model size: 35.4M params.
+          - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
+          - Number of epochs:
+          - Platform: Google Colab free.
 4. Result:
    - The reconstructed images are acceptable.
    - The generated images are poor. 
