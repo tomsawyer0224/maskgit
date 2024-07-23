@@ -1,6 +1,6 @@
 # MaskGIT - Masked Generative Image Transformer
 MaskGIT is a two-stage image generation model. The first stage is to quantize an image to a sequence of discrete tokens. In the second stage, an autoregressive model is learned to generate image tokens sequentially based on the previously generated result.
-# About this project:
+# About this project
 - This is a personal project, for educational purposes only!
 - This project was built to help understand the 'Vector Quantization' concept and the 'Transformer' architecture.
 # Experiment
@@ -15,19 +15,19 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
    - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
    - Number of epochs: 400.
    - Platform: Google Colab free.
-2. **Result**
+2. **Results**
 - The reconstructed images are acceptable.
 - The generated images are poor. \
      ![image](results/recontruction_images/test_on_epoch_199.png) \
      ![image](results/recontruction_images/validate_on_epoch_199.png) \
      ![image](results/generated_images/validate_on_epoch_320.png) \
      ![image](results/generated_images/validate_on_epoch_340.png)
-3. **Conclusion**
+3. **Conclusions**
 - The performance is not good. The reasons can be:
    - The dataset is too small (1799 images). ⟶ Try to use a bigger dataset.
    - The model is not large enough. ⟶ Try to use another configuration (increase image_size, depth, laten_dim, d_model, nhead, etc.).
 - The architecture is quite complicated. We need to perform more and more experiments.
-# How to use:
+# How to use
 1. Clone this repo, cd into maskgit.
 2. Install the requirements: pip install -q -r requirements.txt.
 3. Train the VQGAN: modify the config file (configs/vqgan.yaml), then run the below command:
@@ -46,7 +46,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
    --max_epochs 10 \
    --ckpt_path "path/to/checkpoint" # when you want to resume training
 ```
-# Based on:
+# Based on
   https://arxiv.org/abs/2202.04200 \
   https://arxiv.org/abs/2012.09841 \
   https://github.com/dome272/MaskGIT-pytorch \
