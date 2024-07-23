@@ -14,10 +14,12 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
      - Number of epochs:
      - Platform: Google Colab free.
 3. Result:
-   - The reconstructed images are acceptable. \
+   - The reconstructed images are acceptable.
+   - The generated images are poor. (epoch 320, 340)
      ![image](results/recontruction_images/test_on_epoch_199.png) \
      ![image](results/recontruction_images/validate_on_epoch_199.png) \
-   - The generated images are poor. (epoch 320, 340)
+     ![image](results/generated_images/validate_on_epoch_320.png) \
+     ![image](results/generated_images/validate_on_epoch_340.png) \
      
 # How to use:
 1. Clone this repo, cd to maskgit.
