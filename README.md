@@ -23,9 +23,9 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
      ![image](results/generated_images/validate_on_epoch_320.png) \
      ![image](results/generated_images/validate_on_epoch_340.png)
 3. **Conclusion** \
-The performace of the model is not good, for some probably reasons:
-- The dataset is too small (1799 images) ⟶ Try to use a bigger dataset.
-- The model is not complex enough ⟶ Try to use another configuration (increase image_size, depth, laten_dim, d_model, nhead,...).
+The performance of the model is not good, for some likely reasons:
+- The dataset is too small (1799 images). ⟶ Try to use a bigger dataset.
+- The model is not complex enough. ⟶ Try to use another configuration (increase image_size, depth, laten_dim, d_model, nhead, etc.).
 # How to use:
 1. Clone this repo, cd into maskgit.
 2. Install the requirements: pip install -q -r requirements.txt.
