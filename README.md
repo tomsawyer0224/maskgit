@@ -11,7 +11,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
       - Number of epochs: 200.
       - Platform: Google Colab free.
    - The second stage (Transformer):
-      - Model size: 35.4M params.
+      - Model size: ~35.4M params.
       - Dataset: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset)
       - Number of epochs: 400.
       - Platform: Google Colab free.
