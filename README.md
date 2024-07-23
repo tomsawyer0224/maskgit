@@ -23,13 +23,14 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
      ![image](results/generated_images/validate_on_epoch_320.png) \
      ![image](results/generated_images/validate_on_epoch_340.png)
 3. **Conclusion** \
-   The performance of the model is not good. The reasons can be:
+- The performance is not good. The reasons can be:
    - The dataset is too small (1799 images). ⟶ Try to use a bigger dataset.
-   - The model is not complex enough. ⟶ Try to use another configuration (increase image_size, depth, laten_dim, d_model, nhead, etc.).
+   - The model is not large enough. ⟶ Try to use another configuration (increase image_size, depth, laten_dim, d_model, nhead, etc.).
+- The architecture is quite complicated. We need to do more and more experiments.
 # How to use:
 1. Clone this repo, cd into maskgit.
 2. Install the requirements: pip install -q -r requirements.txt.
-3. Traning the VQGAN: modify the config file (configs/vqgan.yaml), then run the below command:
+3. Train the VQGAN: modify the config file (configs/vqgan.yaml), then run the below command:
 ```
  python train.py \
    --phase "vqgan" \
@@ -37,7 +38,7 @@ MaskGIT is a two-stage image generation model. The first stage is to quantize an
    --max_epochs 10 \
    --ckpt_path "path/to/checkpoint" # when you want to resume training
 ```
-5. Training the Transformer: modify the config file (configs/transformer.yaml, in this phase you must provide the vqgan checkpoint), then run the below command:
+4. Train the Transformer: modify the config file (configs/transformer.yaml, in this phase you must provide the vqgan checkpoint), then run the below command:
 ```
  python train.py \
    --phase "transformer" \
