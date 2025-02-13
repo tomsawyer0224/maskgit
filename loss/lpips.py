@@ -2,10 +2,12 @@ import torch
 import torch.nn as nn
 from torchvision.models import vgg16, VGG16_Weights
 from collections import namedtuple
-#import os
-#import hashlib
-#import requests
-#from tqdm import tqdm
+
+# import os
+# import hashlib
+# import requests
+# from tqdm import tqdm
+
 
 class LPIPS(nn.Module):
     def __init__(self):
@@ -13,18 +15,21 @@ class LPIPS(nn.Module):
         self.scaling_layer = ScalingLayer()
         self.channels = [64, 128, 256, 512, 512]
         self.feature_net = VGG16()
-        self.lins = nn.ModuleList([
-            NetLinLayer(self.channels[0], use_dropout=True),
-            NetLinLayer(self.channels[1], use_dropout=True),
-            NetLinLayer(self.channels[2], use_dropout=True),
-            NetLinLayer(self.channels[3], use_dropout=True),
-            NetLinLayer(self.channels[4], use_dropout=True)
-        ])#.load_state_dict(torch.load('./loss/lins_state_dict.pth'))
+        self.lins = nn.ModuleList(
+            [
+                NetLinLayer(self.channels[0], use_dropout=True),
+                NetLinLayer(self.channels[1], use_dropout=True),
+                NetLinLayer(self.channels[2], use_dropout=True),
+                NetLinLayer(self.channels[3], use_dropout=True),
+                NetLinLayer(self.channels[4], use_dropout=True),
+            ]
+        )  # .load_state_dict(torch.load('./loss/lins_state_dict.pth'))
         self.load_lins_state_dict()
         for param in self.parameters():
             param.requires_grad = False
+
     def load_lins_state_dict(self):
-        self.lins.load_state_dict(torch.load('./loss/lins_state_dict.pth'))
+        self.lins.load_state_dict(torch.load("./loss/lins_state_dict.pth"))
 
     def forward(self, real_x, fake_x):
         features_real = self.feature_net(self.scaling_layer(real_x))
@@ -33,26 +38,40 @@ class LPIPS(nn.Module):
 
         # calc MSE differences between features
         for i in range(len(self.channels)):
-            diffs[i] = (norm_tensor(features_real[i]) - norm_tensor(features_fake[i])) ** 2
+            diffs[i] = (
+                norm_tensor(features_real[i]) - norm_tensor(features_fake[i])
+            ) ** 2
 
-        return sum([spatial_average(self.lins[i].model(diffs[i])) for i in range(len(self.channels))])
+        return sum(
+            [
+                spatial_average(self.lins[i].model(diffs[i]))
+                for i in range(len(self.channels))
+            ]
+        )
+
 
 class ScalingLayer(nn.Module):
     def __init__(self):
         super(ScalingLayer, self).__init__()
-        self.register_buffer("shift", torch.Tensor([-.030, -.088, -.188])[None, :, None, None])
-        self.register_buffer("scale", torch.Tensor([.458, .448, .450])[None, :, None, None])
+        self.register_buffer(
+            "shift", torch.Tensor([-0.030, -0.088, -0.188])[None, :, None, None]
+        )
+        self.register_buffer(
+            "scale", torch.Tensor([0.458, 0.448, 0.450])[None, :, None, None]
+        )
 
     def forward(self, x):
         return (x - self.shift) / self.scale
+
 
 class NetLinLayer(nn.Module):
     def __init__(self, in_channels, out_channels=1, use_dropout=False):
         super(NetLinLayer, self).__init__()
         self.model = nn.Sequential(
             nn.Dropout() if use_dropout else None,
-            nn.Conv2d(in_channels, out_channels, 1, 1, 0, bias=False)
+            nn.Conv2d(in_channels, out_channels, 1, 1, 0, bias=False),
         )
+
 
 class VGG16(nn.Module):
     def __init__(self):
@@ -79,8 +98,11 @@ class VGG16(nn.Module):
         h_relu4 = h
         h = self.slice5(h)
         h_relu5 = h
-        vgg_outputs = namedtuple("VGGOutputs", ['relu1_2', 'relu2_2', 'relu3_3', 'relu4_3', 'relu5_3'])
+        vgg_outputs = namedtuple(
+            "VGGOutputs", ["relu1_2", "relu2_2", "relu3_3", "relu4_3", "relu5_3"]
+        )
         return vgg_outputs(h_relu1, h_relu2, h_relu3, h_relu4, h_relu5)
+
 
 def norm_tensor(x):
     """
@@ -91,10 +113,11 @@ def norm_tensor(x):
     norm_factor = torch.sqrt(torch.sum(x**2, dim=1, keepdim=True))
     return x / (norm_factor + 1e-10)
 
+
 def spatial_average(x):
     """
      imgs have: batch_size x channels x width x height --> average over width and height channel
     :param x: batch of images
     :return: averaged images along width and height
     """
-    return x.mean([2,3], keepdim=True)
+    return x.mean([2, 3], keepdim=True)
